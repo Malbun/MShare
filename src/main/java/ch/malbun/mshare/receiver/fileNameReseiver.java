@@ -1,7 +1,5 @@
 package ch.malbun.mshare.receiver;
 
-import ch.malbun.mshare.MShareException;
-
 import java.io.DataInputStream;
 import java.io.File;
 import java.io.IOException;
@@ -22,8 +20,8 @@ public class fileNameReseiver {
             file = new File(outputPath);
             try {
                 file.createNewFile();
-            } catch (MShareException e) {
-                throw new MShareException("File already exists!", e);
+            } catch (IOException e) {
+                throw new IOException();
             }
         }
         return outputPath;
